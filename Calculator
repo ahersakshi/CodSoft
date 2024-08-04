@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculator</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      #calc {
+         width: 100%;
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: #1e1e1e; /* Dark grey background for the page */
+      }
+      #content {
+         background: #2a2a2a; /* Slightly lighter dark grey for the calculator */
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better contrast */
+      }
+      #content form input {
+         border: 0;
+         outline: 0;
+         width: 50px;
+         height: 50px;
+         border-radius: 8px;
+         font-size: 20px; /* Slightly larger font size for better readability */
+         margin: 5px; /* Reduced margin for a compact layout */
+         cursor: pointer;
+      }
+      #backspace {
+         background-color: #ff6f61; /* Light coral color for backspace */
+         color: white;
+      }
+      #res {
+         padding: 10px;
+         background-color: #333; /* Darker grey for the display area */
+         color: #fff; /* White text color for readability */
+      }
+      #clear {
+         background-color: #ff6f61; /* Light coral color for clear */
+         color: white;
+      }
+      form #output {
+         display: flex;
+         justify-content: flex-end;
+         margin: 15px 0;
+      }
+      form #output input {
+         text-align: right;
+         flex: 1;
+         font-size: 25px;
+         border: 1px solid #444; /* Darker grey border for the output display */
+         border-radius: 8px; /* Rounded corners for the output display */
+      }
+      .btn input {
+         background-color: #555; /* Medium grey background for regular buttons */
+         color: white;
+      }
+      .btn input:hover {
+         background-color: #666; /* Slightly lighter grey on hover */
+      }
+      .btn input:active {
+         background-color: #777; /* Even lighter grey when button is pressed */
+      }
+      #btn-clear {
+         background-color: #ff6f61; /* Light coral color for clear button */
+         color: white;
+      }
+      #btn-clear:hover {
+         background-color: #ff5c4b; /* Darker coral on hover */
+      }
+      #btn-clear:active {
+         background-color: #e03a1e; /* Even darker coral when button is pressed */
+      }
+   </style>
+</head>
+<body>
+   <div id="calc">
+      <div id="content">
+         <form>
+            <div id="output">
+               <input type="text" id='res'>
+            </div>
+            <div class="btn">
+               <input type="button" value='C' onclick="Clear()" id="clear">
+               <input type="button" value='←' onclick="Back()" id="backspace">
+               <input type="button" value='%' onclick="Solve('%')">
+               <input type="button" value='/' onclick="Solve('/')">
+               <br>
+               <input type="button" value='7' onclick="Solve('7')">
+               <input type="button" value='8' onclick="Solve('8')">
+               <input type="button" value='9' onclick="Solve('9')">
+               <input type="button" value='x' onclick="Solve('*')">
+               <br>
+               <input type="button" value='4' onclick="Solve('4')">
+               <input type="button" value='5' onclick="Solve('5')">
+               <input type="button" value='6' onclick="Solve('6')">
+               <input type="button" value='-' onclick="Solve('-')">
+               <br>
+               <input type="button" value='1' onclick="Solve('1')">
+               <input type="button" value='2' onclick="Solve('2')">
+               <input type="button" value='3' onclick="Solve('3')">
+               <input type="button" value='+' onclick="Solve('+')">
+               <br>
+               <input type="button" value='00' onclick="Solve('00')">
+               <input type="button" value='0' onclick="Solve('0')">
+               <input type="button" value='.' onclick="Solve('.')">
+               <input type="button" value='=' onclick="Result()">
+            </div>
+         </form>
+      </div>
+   </div>
+   <script src='index.js'></script>
+</body>
+</html>
